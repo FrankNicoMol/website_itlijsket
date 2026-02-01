@@ -130,6 +130,11 @@ footer {
     font-size: 0.9rem;
 }
 
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+
 /* ================= Animatie ================= */
 main, footer {
     animation: fadeIn 0.6s ease-in-out;
@@ -146,34 +151,34 @@ main, footer {
         height: 250px;
     }
 
+    /* Scrollbaar menu */
     nav {
-        position: absolute;
         bottom: 20px;
         left: 0;
         right: 0;
         display: flex;
-        gap: 10px; /* tussenruimte tussen knoppen */
-        padding: 4px 12px; /* kleinere padding */
+        gap: 10px;
+        padding: 4px 12px;
         overflow-x: auto; /* horizontaal scrollbaar */
-        scroll-behavior: smooth; /* soepele scroll bij swipe */
-        -webkit-overflow-scrolling: touch; /* betere touch scroll op iOS */
-        margin: 0 10px; /* ruimte aan de zijkanten */
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 10px; /* ruimte aan zijkanten */
         border-radius: 25px;
         background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(6px);
     }
 
     nav::-webkit-scrollbar {
-        display: none; /* scrollbar verbergen voor mooiere look */
+        display: none; /* scrollbar verbergen */
     }
 
     nav a {
-        flex: 0 0 auto; /* knoppen behouden vaste grootte */
+        flex: 0 0 auto; /* behouden vaste grootte */
         padding: 6px 12px;
         font-size: 0.85rem;
         border-radius: 18px;
         background: rgba(255, 255, 255, 0.6);
-        white-space: nowrap; /* voorkomt dat tekst afbreekt */
+        white-space: nowrap; /* voorkomt afbreken van tekst */
     }
 
     main {
@@ -191,4 +196,3 @@ main, footer {
         height: 40px;
     }
 }
-
