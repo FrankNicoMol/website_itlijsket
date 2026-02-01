@@ -10,15 +10,31 @@
 <body>
 
     <!-- Banner + Menu -->
-    <header class="banner">
-        <img src="../images/itlijsket.png" alt="It Lijsket">
-        <nav>
-            <a href="../">Home</a>
-            <a href="../jaarverslagen/">Jaarverslagen</a>
-            <a href="../contact/">Contact</a>
-            <a href="../vrijwilligers/">Vrijwilligers</a>
-        </nav>
-    </header>
+<header class="banner">
+    <img src="../images/itlijsket.png" alt="It Lijsket">
+
+    <!-- Hamburger knop voor mobiel -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="menu">
+        <a href="../">Home</a>
+        <a href="../jaarverslagen/">Jaarverslagen</a>
+        <a href="../contact/">Contact</a>
+        <a href="../vrijwilligers/">Vrijwilligers</a>
+    </nav>
+</header>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('expanded');
+}
+</script>
+
 
     <!-- Hoofdcontent -->
     <main>
