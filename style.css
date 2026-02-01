@@ -30,7 +30,7 @@ body {
     display: block;
 }
 
-/* ================= Menu over banner ================= */
+/* ================= Menu over banner (desktop) ================= */
 nav {
     position: absolute;
     bottom: 50px; /* menu zweeft over banner */
@@ -64,7 +64,7 @@ nav a:hover {
 /* ================= Hoofdcontent ================= */
 main {
     max-width: 1000px;
-    margin: 60px auto 40px auto; /* genoeg ruimte voor menu bovenin */
+    margin: 60px auto 40px auto;
     background: white;
     padding: 50px;
     border-radius: 14px;
@@ -82,7 +82,6 @@ h2 {
     color: #3a5a40;
 }
 
-/* Lijsten (jaarverslagen) */
 ul {
     list-style: none;
     margin-top: 20px;
@@ -151,39 +150,48 @@ main, footer {
         height: 250px;
     }
 
-    /* Scrollbaar menu op mobiel, gecentreerd + gradient hints */
+    /* ================= Scrollbaar menu mobiel ================= */
     nav {
-        position: absolute;
         bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
-        gap: 10px;
-        padding: 6px 16px;
-        overflow-x: auto; /* horizontaal scrollbaar */
+        gap: 12px;
+        padding: 8px 16px;
+        overflow-x: auto;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
         border-radius: 25px;
         background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(6px);
         max-width: calc(100% - 20px);
-        position: relative; /* voor pseudo-elementen */
+        z-index: 10;
+        position: relative;
     }
 
     nav::-webkit-scrollbar {
-        display: none;
+        display: none; /* scrollbar verbergen */
     }
 
     nav a {
         flex: 0 0 auto;
-        padding: 8px 16px;   /* grotere knoppen */
-        font-size: 0.95rem;  /* grotere tekst */
+        padding: 8px 16px; /* grotere knopjes */
+        font-size: 0.95rem;
         border-radius: 20px;
         background: rgba(255, 255, 255, 0.65);
         white-space: nowrap;
+        font-weight: 600;
+        color: #344e41;
+        text-decoration: none;
+        transition: all 0.25s ease;
     }
 
-    /* ================= Gradient hints ================= */
+    nav a:hover {
+        background: #588157;
+        color: white;
+    }
+
+    /* Gradient hints links/rechts voor scroll */
     nav::before,
     nav::after {
         content: '';
