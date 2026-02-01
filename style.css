@@ -115,7 +115,7 @@ ul a:hover {
 }
 
 .anbi-badge img {
-    height: 30px; /* kleiner icoon */
+    height: 75px; /* kleiner icoon */
     width: auto;
     border-radius: 4px;
 }
