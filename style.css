@@ -33,7 +33,7 @@ body {
 /* ================= Menu over banner (desktop) ================= */
 nav {
     position: absolute;
-    bottom: 50px; /* menu zweeft over banner */
+    bottom: 20px; /* menu dichter bij de onderkant van de banner */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -152,7 +152,7 @@ main, footer {
 
     /* ================= Scrollbaar menu mobiel ================= */
     nav {
-        bottom: 20px;
+        bottom: 10px; /* iets boven banner einde */
         left: 50%;
         transform: translateX(-50%);
         display: flex;
