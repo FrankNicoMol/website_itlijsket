@@ -1,22 +1,8 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #eaf7ef; /* pastel lichtgroen */
-    color: #2f3e34;
-    line-height: 1.6;
-}
-
 /* Banner container */
 .banner {
     position: relative;
     width: 100%;
-    height: 180px; /* kleiner dan voorheen */
+    height: 180px; /* desktop hoogte */
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     border-bottom-left-radius: 8px;
@@ -33,15 +19,17 @@ body {
 /* Menu over banner */
 nav {
     position: absolute;
-    bottom: 10px; /* onderkant banner */
+    bottom: -15px; /* iets overlappend met banner */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.85); /* semi-transparant wit */
-    padding: 8px 20px;
-    border-radius: 30px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.9); /* semi-transparant wit */
+    padding: 12px 30px;
+    border-radius: 50px; /* ronde menubalk */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(6px); /* subtiel blur effect voor transparantie */
+    z-index: 10;
 }
 
 /* Menu links als knopjes */
@@ -49,9 +37,10 @@ nav a {
     text-decoration: none;
     color: #344e41;
     font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 25px; /* ronde knoppen */
     transition: all 0.25s ease;
+    background: rgba(255, 255, 255, 0.4);
 }
 
 nav a:hover {
@@ -62,7 +51,7 @@ nav a:hover {
 /* Hoofdcontent kaart */
 main {
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 80px auto 40px auto; /* extra top margin zodat menu niet overlapt */
     background: white;
     padding: 50px;
     border-radius: 14px;
@@ -79,26 +68,6 @@ h1 {
 h2 {
     margin-bottom: 10px;
     color: #3a5a40;
-}
-
-/* Lijsten (jaarverslagen) */
-ul {
-    list-style: none;
-    margin-top: 20px;
-}
-
-ul li {
-    margin-bottom: 12px;
-}
-
-ul a {
-    text-decoration: none;
-    color: #588157;
-    font-weight: 500;
-}
-
-ul a:hover {
-    text-decoration: underline;
 }
 
 /* Footer */
@@ -123,22 +92,25 @@ main, footer {
 
 /* Mobiel */
 @media (max-width: 768px) {
-    main {
-        margin: 20px;
-        padding: 25px;
+    .banner {
+        height: 140px;
     }
 
     nav {
-        gap: 10px;
+        bottom: 10px;
+        gap: 12px;
         padding: 6px 12px;
     }
 
     nav a {
         padding: 6px 12px;
         font-size: 0.9rem;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.6);
     }
 
-    .banner {
-        height: 140px;
+    main {
+        margin: 20px;
+        padding: 25px;
     }
 }
