@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- Banner + Menu -->
     <header class="banner">
         <img src="images/itlijsket.png" alt="It Lijsket">
         <nav>
@@ -17,20 +18,38 @@
         </nav>
     </header>
 
+    <!-- Hoofdcontent -->
     <main>
         <h1>Contact</h1>
-        <p>Email: info@itlijsket.nl</p>
-        <p>Telefoon: 06-12345678</p>
+
+        <!-- ADRES GEGEVENS (vul hier zelf in) -->
+        <div class="contact-info" style="margin-bottom: 20px;">
+            <p><strong>Adres:</strong> <!-- VUL HIER HET ADRES IN zoals weergegeven in Google Maps --></p>
+        </div>
+
+        <!-- Google Maps embed -->
+        <div class="map-container" style="margin-top: 20px;">
+            <iframe
+                src="https://www.google.com/maps?q=maps.app.goo.gl/uu4TGm31g1mWYL3C8&output=embed"
+                width="100%"
+                height="400"
+                style="border:0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <!-- ANBI badge rechts onderaan content -->
+        <div class="anbi-badge">
+            <span>It Lijsket heeft de ANBI status</span>
+            <img src="images/anbi.png" alt="ANBI logo">
+        </div>
+
     </main>
 
     <footer>
         <p>© 2026 Frank Nico Mol</p>
     </footer>
-
-    <div class="anbi-badge">
-        <img src="images/anbi.jpg" alt="ANBI logo">
-        <span>It Lijsket heeft de ANBI status</span>
-    </div>
 
 </body>
 </html>
