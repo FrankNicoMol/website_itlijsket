@@ -151,22 +151,23 @@ main, footer {
         height: 250px;
     }
 
-    /* Scrollbaar menu op mobiel, gecentreerd */
+    /* Scrollbaar menu op mobiel, gecentreerd + gradient hints */
     nav {
         position: absolute;
         bottom: 20px;
         left: 50%;
-        transform: translateX(-50%); /* gecentreerd */
+        transform: translateX(-50%);
         display: flex;
         gap: 10px;
-        padding: 6px 16px; /* iets grotere padding voor grotere knoppen */
+        padding: 6px 16px;
         overflow-x: auto; /* horizontaal scrollbaar */
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
         border-radius: 25px;
         background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(6px);
-        max-width: calc(100% - 20px); /* marge aan zijkanten */
+        max-width: calc(100% - 20px);
+        position: relative; /* voor pseudo-elementen */
     }
 
     nav::-webkit-scrollbar {
@@ -174,12 +175,34 @@ main, footer {
     }
 
     nav a {
-        flex: 0 0 auto; /* knoppen behouden vaste breedte */
-        padding: 8px 16px;   /* groter dan eerder */
-        font-size: 0.95rem;  /* iets grotere tekst */
+        flex: 0 0 auto;
+        padding: 8px 16px;   /* grotere knoppen */
+        font-size: 0.95rem;  /* grotere tekst */
         border-radius: 20px;
-        background: rgba(255, 255, 255, 0.65); /* iets zichtbaarder */
-        white-space: nowrap; /* voorkomt afbreken van tekst */
+        background: rgba(255, 255, 255, 0.65);
+        white-space: nowrap;
+    }
+
+    /* ================= Gradient hints ================= */
+    nav::before,
+    nav::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 30px;
+        height: 100%;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    nav::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(234,247,239,1), rgba(234,247,239,0));
+    }
+
+    nav::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(234,247,239,1), rgba(234,247,239,0));
     }
 
     main {
