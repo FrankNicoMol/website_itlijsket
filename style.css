@@ -151,8 +151,9 @@ main, footer {
         height: 250px;
     }
 
-    /* Scrollbaar menu */
+    /* Scrollbaar menu op mobiel */
     nav {
+        position: absolute;
         bottom: 20px;
         left: 0;
         right: 0;
@@ -166,6 +167,7 @@ main, footer {
         border-radius: 25px;
         background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(6px);
+        transform: none; /* verwijder centrering transform zodat scroll werkt */
     }
 
     nav::-webkit-scrollbar {
