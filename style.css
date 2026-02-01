@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Basis */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #eaf7ef; /* pastel lichtgroen */
@@ -13,42 +12,57 @@ body {
     line-height: 1.6;
 }
 
-/* Banner */
+/* Banner container */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 180px; /* kleiner dan voorheen */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
 .banner img {
     width: 100%;
-    height: 260px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
-/* Navigatie */
+/* Menu over banner */
 nav {
-    background: white;
-    text-align: center;
-    padding: 18px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: absolute;
+    bottom: 10px; /* onderkant banner */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.85); /* semi-transparant wit */
+    padding: 8px 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Menu links als knopjes */
 nav a {
-    color: #3a5a40;
     text-decoration: none;
-    margin: 0 25px;
+    color: #344e41;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.25s ease;
 }
 
 nav a:hover {
-    color: #588157;
+    background: #588157;
+    color: white;
 }
 
 /* Hoofdcontent kaart */
 main {
     max-width: 1000px;
-    margin: 50px auto;
+    margin: 40px auto;
     background: white;
     padding: 50px;
     border-radius: 14px;
@@ -97,8 +111,8 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Kleine animatie */
-main, nav, footer {
+/* Fade-in animatie */
+main, footer {
     animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -114,11 +128,17 @@ main, nav, footer {
         padding: 25px;
     }
 
-    nav a {
-        margin: 0 12px;
+    nav {
+        gap: 10px;
+        padding: 6px 12px;
     }
 
-    .banner img {
-        height: 180px;
+    nav a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .banner {
+        height: 140px;
     }
 }
